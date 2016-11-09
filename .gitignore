@@ -35,7 +35,7 @@
 *.fls
 *.pdf
 *.png
-mpi.sty
+mfe.sty
 *.cls
 *.substvars
 debian/mpi-latex-templates

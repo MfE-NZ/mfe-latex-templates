@@ -1,21 +1,12 @@
 SHELL := /bin/bash
-LATEXMK_VERSION=$(strip $(patsubst Version,,$(shell latexmk -v | grep -oi "version.*")))
-ifeq ($(LATEXMK_VERSION),4.24)
-	LATEXMK_OPTIONS=-pdflatex=xelatex -latex=xelatex -pdf 
-else
-	LATEXMK_OPTIONS=-xelatex
-endif
 
-all: mpi.pdf mpi-far.pdf
+all: mfe.pdf
 
-mpi-far.pdf: mpi-far.tex test.bib mpi.sty FAR.jpg biblatex-mpi/mpi.bbx biblatex-mpi/mpi.cbx biblatex-mpi/english-mpi.lbx
-	latexmk $(LATEXMK_OPTIONS) mpi-far.tex
+mfe.sty: mfe.ins mfe.dtx 
+	latex mfe.ins
 
-mpi.sty: mpi.ins mpi.dtx 
-	latex mpi.ins
-
-mpi.pdf: mpi.dtx mpi.sty
-	latexmk $(LATEXMK_OPTIONS) mpi.dtx
+mfe.pdf: mfe.dtx mfe.sty test.bib
+	xelatex mfe.dtx
 
 pkg:
 	debuild -us -uc
@@ -23,8 +14,8 @@ pkg:
 .PHONY: cleanClass clean
 
 cleanClass:
-	rm -f mpi.sty mpi.pdf \
-		mpi-far.cls mpi-aebr.cls
+	rm -f mfe.sty mfe.pdf \
+		mfe-far.cls mfe-aebr.cls
 
 clean: cleanClass
 	rm -f  *.pdf *.aux *.log *.out *.backup *.glo *.idx \
