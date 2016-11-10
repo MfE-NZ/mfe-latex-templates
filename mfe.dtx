@@ -72,9 +72,9 @@
 %
 % \begin{abstract}
 %  This is a set of classes that are used to format \LaTeX documents according the 
-%  Ministry for the Environment formatting requirements. There are two document
-%  classes provided: ``mfe-nzers'', for formatting Aquatic Environment and Biodiversity
-%  Reports, and ``mfe-far'', for formatting Fisheries Assessment Reports. Using these
+%  Ministry for the Environment formatting requirements. There is currently one document
+%  class provided: ``mfe-nzers'', for formatting New Zealand Environmental Reporting Series 
+%  Reports. Using these
 %  packages allows for producing publication ready documents.
 % \end{abstract}
 % \clearpage
@@ -124,7 +124,7 @@
 % styles have classes implemented:
 %
 % \begin{itemize}
-% \item Aquatic Environment and Biodiversity Report
+% \item New Zealand Environmental Reporting Series 
 % \end{itemize}
 %
 % The basic structure is the same as the base latex article class
@@ -139,7 +139,7 @@
 %
 % \section{Page Layout}
 %
-% The MPI styles use margins based on existing reports.
+% The MFE styles use margins based on existing reports.
 %
 %    \begin{macrocode}
 %<common>\RequirePackage[margin=2.5cm]{geometry}
@@ -147,10 +147,10 @@
 %
 % \section{Fonts}
 %
-% MPI reports use standard times like fonts.
+% MFE reports use standard times like fonts.
 %    
 %    \begin{macrocode}
-%<*mfe-nzers|mfe-far>
+%<*mfe-nzers>
 \RequirePackage{fontspec}
 \setmainfont[Mapping=tex-text,
     ItalicFont     = {Times New Roman Italic},
@@ -175,7 +175,7 @@
     ItalicFont     = {Times New Roman Italic},
     BoldFont       = {Times New Roman Bold},
     BoldItalicFont = {Times New Roman Bold Italic}]{Times New Roman}
-%</mfe-nzers|mfe-far>
+%</mfe-nzers>
 %    \end{macrocode}
 %
 % We also set the fontsize to be 11pt.
@@ -191,7 +191,7 @@
 %
 % \section{Headings}
 %    \begin{macrocode}
-%<*mfe-nzers|mfe-far>
+%<*mfe-nzers>
 \RequirePackage{titlesec}
 \titleformat{\section}{\normalfont\bfseries\sffamily}{}{0em}{}
 \titleformat{\subsection}{\normalfont\bfseries\sffamily}{}{0em}{}
@@ -199,7 +199,7 @@
 \titlespacing{\section}{0pt}{\baselineskip}{0pt}
 \titlespacing{\subsection}{0pt}{\baselineskip}{0pt}
 \titlespacing{\subsubsection}{0pt}{\baselineskip}{0pt}
-%</mfe-nzers|mfe-far>
+%</mfe-nzers>
 %    \end{macrocode}
 %
 % \section{Header and Footer}
@@ -207,7 +207,7 @@
 %    Page footers must contain the report name, page and publisher. 
 %
 %    \begin{macrocode}
-%<*mfe-nzers|mfe-far>
+%<*mfe-nzers>
 \usepackage{fancyhdr}
 
 \fancypagestyle{plain}{
@@ -215,7 +215,7 @@
     \fancyfoot[LE]{\sffamily\scriptsize\thepage\hspace{1cm}\footertitle}
     \fancyfoot[RO]{\sffamily\scriptsize\footertitle\hspace{1cm}\thepage}
   }
-%</mfe-nzers|mfe-far>
+%</mfe-nzers>
 %   \end{macrocode}
 %
 % \section{Bibliography}
@@ -293,13 +293,13 @@
 %    \end{macrocode}
 %  
 %
-% AEBR and FAR documents require ISSN, ISBN and report numbers. All of these must have 
+% NZERS documents require ISSN, ISBN and report numbers. All of these must have 
 % sensible defaults before they are finished.
 %    \begin{macrocode}
 %<*mfe-nzers>
 \newcommand{\@reportwallpaper}{AEBR.jpg}
 \newcommand{\@issn}{1179-6480}
-\newcommand{\@reportseries}{New Zealand Aquatic Environment and Biodiversity Report}
+\newcommand{\@reportseries}{New Zealand Environmental Report Series}
 %</mfe-nzers>
 %<*mfe-far>
 \newcommand{\@reportwallpaper}{FAR.jpg}
@@ -346,7 +346,7 @@
 %</mfe-nzers|mfe-far>
 %    \end{macrocode}
 %
-% The first page is fully covered by the special title image used by AEBRs. 
+% The first page is fully covered by the special title image used by the NZERS. 
 %
 %    \begin{macrocode}
 %<*mfe-nzers|mfe-far>
@@ -389,7 +389,7 @@
 %</mfe-nzers|mfe-far>
 %    \end{macrocode}
 %
-% Each report then states that is an AEBR and its number.
+% Each report then states that is an NZERS and its number.
 %
 %    \begin{macrocode}
 %<*mfe-nzers|mfe-far>  
@@ -444,20 +444,20 @@ ISBN \@isbn{} (online)
 Requests for further copies should be directed to:
 
 
-Publications Logistics Officer\\
-Ministry for Primary Industries\\
-PO Box 2526\\
+Publications\\
+Ministry for the Environment\\
+PO Box XXXX\\
 WELLINGTON 6140
 
-Email: brand@mfe.govt.nz\\
+Email: info@mfe.govt.nz\\
 Telephone: 0800 00 83 33\\
 Facsimile: 04-894 0300
 
-This publication is also available on the Ministry for Primary Industries websites at:\\
+This publication is also available on the Ministry for the Environment websites at:\\
 \url{http://www.mfe.govt.nz/news-resources/publications.aspx}\\
-\url{http://fs.fish.govt.nz} go to Document library/Research reports
+\url{http://www.mfe.govt.nz} go to Document library/Research reports
 
-\textbf{\copyright{} Crown Copyright - Ministry for Primary Industries}
+\textbf{\copyright{} Crown Copyright - Ministry for the Environment}
 }
 \clearpage
 %</mfe-nzers|mfe-far>
