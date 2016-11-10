@@ -1,8 +1,9 @@
 MPI LaTeX Templates
 =========================
 
-This package generates LaTeX class and style files to create New Zealand Ministry for Primary Industries (MPI) 
-fisheries reports. The style files can be built and installed manually, or can be installed using debian packages on
+This package generates LaTeX class and style files to create Ministry for the Environment (MFE) and Statistics NZ
+Environmental Reporting Series
+reports. The style files can be built and installed manually, or can be installed using debian packages on
 Linux systems.
 
 ## Installing the package
@@ -50,10 +51,10 @@ systems are `~/.fonts` and `/usr/local/share/fonts`.
 
 To install the package run the following commands
 
-          git clone git@github.com:dragonfly-science/mpi-latex-templates.git
-          cd mpi-latex-templates
+          git clone git@github.com:MfE-NZ/mfe-latex-templates.git
+          cd mfe-latex-templates
           make pkg
-          sudo dpkg -i ../mpi-latex-templates_1.3ubuntu1_all.deb
+          sudo dpkg -i ../mfe-latex-templates_1.3ubuntu1_all.deb
 
 
 #### Manual Installation
@@ -64,8 +65,8 @@ In the case of manual installation, the following steps are required.
 
 Run the following commands
 
-          git clone git@github.com:dragonfly-science/mpi-latex-templates.git
-          cd mpi-latex-templates
+          git clone git@github.com:MfE-NZ/mfe-latex-templates.git
+          cd mfe-latex-templates
           make all
 
 **Identify where you can install latex files**
@@ -74,15 +75,15 @@ On Linux and OS X run the command: `kpsepath tex | tr ':' '\n'` which will give 
 of directories which latex will look for files in. On windows use 
 `C:\users\<xyz>\texmf\tex\latex`, where `<xyz>` is your username.
 
-**Install the mpi templates**
+**Install the mfe templates**
 
-Create a directory called `mpi` in the latex tree and place all the `.sty`,
-`.cls` and `.JPG` files into it. Copy the biblatex-mpi into the same directory as the 
-`mpi` directory. You should now have two new directories. A common 
+Create a directory called `mfe` in the latex tree and place all the `.sty`,
+`.cls` and `.JPG` files into it. Copy the biblatex-mfe into the same directory as the 
+`mfe` directory. You should now have two new directories. A common 
 location for these would be 
 
- * /usr/share/texlive/texmf-dist/tex/latex/mpi
- * /usr/share/texlive/texmf-dist/tex/latex/biblatex-mpi
+ * /usr/share/texlive/texmf-dist/tex/latex/mfe
+ * /usr/share/texlive/texmf-dist/tex/latex/biblatex-mfe
 
 **Tell LaTeX about the new package**
 
@@ -93,20 +94,20 @@ To ensure that LaTeX is aware of the new package you will need to run: `texhash`
 
 At this point the following latex classes will be available for you to use:
 
- - mpi-aebr
- - mpi-far
+ - mfe-aebr
+ - mfe-far
 
-You will also have access to the `mpi` package.
+You will also have access to the `mfe` package.
 
 
 ## Documentation
 
-There is an example tex file `mpi-far.tex` showing how it can be used. 
+There is an example tex file `mfe-far.tex` showing how it can be used. 
 
 
 ## Incompatible Packages
 
-The mpi templates package will not work correctly with the following packages:
+The mfe templates package will not work correctly with the following packages:
 
  - subfig (use subcaption instead)
 
