@@ -1,4 +1,4 @@
-MPI LaTeX Templates
+MFE LaTeX Templates
 =========================
 
 This package generates LaTeX class and style files to create Ministry for the Environment (MFE) and Statistics NZ
